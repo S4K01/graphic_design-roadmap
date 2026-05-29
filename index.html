@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Cairo', 'sans-serif'] },
+        colors: { bgMain: '#0a0a0f', bgCard: '#12102a' }
+      }
+    }
+  }
+</script>
+<style>
+  /* تعديل بسيط عشان الأنيميشن بتاع الارتفاع يشتغل صح */
+  .phase-body { overflow: hidden; }
+</style>
+</head>
+<body class="font-sans bg-bgMain text-[#f0eeff] min-h-screen antialiased selection:bg-purple-500/30">
+
+<div class="hero-section text-center px-4 pt-16 pb-12 bg-gradient-to-b from-bgCard to-bgMain relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(120,80,255,0.25)_0%,transparent_70%)] pointer-events-none"></div>
+  <div class="relative z-10">
+    <div class="badge inline-block text-[11px] font-bold tracking-widest px-4 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/40 text-purple-300 mb-4 uppercase">Udemy Personal Plan · خارطة طريق</div>
+    <h1 class="hero-title text-[clamp(22px,5vw,38px)] font-black leading-tight mb-3 bg-gradient-to-br from-white to-purple-300 bg-clip-text text-transparent">خارطة طريق الجرافيك ديزاين</h1>
+    <p class="hero-desc text-sm text-purple-300/80 max-w-[420px] mx-auto">من الصفر لمستوى Creative Director — كل الكورسات من Udemy Personal Plan</p>
+  </div>
+</div>
+
+<div class="phases-container p-4 md:p-6 flex flex-col gap-6 max-w-[700px] mx-auto">
+
+  <div class="phase-card is-open border border-white/5 rounded-[20px] overflow-hidden">
+    <div class="bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-4 md:p-5 cursor-pointer flex items-center justify-between hover:opacity-85 transition-opacity" onclick="togglePhase(this)">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg font-black shrink-0 bg-blue-500/20 text-blue-400">١</div>
+        <div>
+          <h2 class="text-[15px] font-bold mb-0.5">الأساس والثالوث المقدس</h2>
+          <span class="text-xs opacity-70 block">🕐 شهرين إلى ٣ أشهر · مبتدئ</span>
+        </div>
+      </div>
+      <span class="chevron text-lg shrink-0 rotate-180">▾</span>
+    </div>
+    <div class="phase-body px-4 md:px-6 pb-6">
+      <div class="rounded-xl p-4 mb-5 text-[13px] leading-relaxed border border-blue-500/15 bg-blue-500/5 mt-4">
+        <strong class="font-bold block mb-1 text-[12px] tracking-wider uppercase opacity-80 text-blue-300">الهدف</strong>
+        نفهم قواعد التصميم ونتحكم في "الثالوث المقدس" بتاع Adobe — اللي هما Illustrator وPhotoshop وInDesign.
+      </div>
+      <div class="text-[11px] font-bold tracking-widest uppercase opacity-50 mb-3">الكورسات المطلوبة</div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-blue-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Graphic Design Masterclass – Learn GREAT Design</strong><span class="text-xs opacity-60">المدرب: Lindsay Marsh</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-blue-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Adobe Illustrator CC – Essentials Training</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-blue-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Adobe Photoshop CC – Essentials Training</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="mt-4 rounded-xl p-4 text-[12.5px] leading-relaxed border-r-4 border-blue-500 bg-blue-500/5">
+        <strong class="font-bold block mb-1">⚡ ركز على إيه؟</strong>
+        في أول كورس: نظريات الألوان، التايبوغرافيا، والـ Composition. في Illustrator: Pen Tool، Shape Builder، والـ Vectors. في Photoshop: Smart Objects، Adjustment Layers، والـ Masking.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-blue-500/5">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase">🎨 المشروع العملي</strong>
+        اعمل Brand Identity كاملة لمحل قهوة خيالي في منطقتك — صمم اللوجو على Illustrator، واعمل تصاميم السوشيال ميديا والبوستات على Photoshop.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-red-500/10">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase text-red-400">⚠️ أخطاء المبتدئين</strong>
+        الاعتماد على فكرة "البرنامج بيعمل التصميم لوحده". الغلطة التانية إنك تقلد Tutorials خطوة بخطوة وتفكر إنك بتصمم.
+      </div>
+      <div class="inline-block text-[11px] font-bold px-3 py-1 rounded-full mt-3 bg-blue-500/15 text-blue-400">مبتدئ · Beginner</div>
+    </div>
+  </div>
+
+  <div class="phase-card border border-white/5 rounded-[20px] overflow-hidden">
+    <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4 md:p-5 cursor-pointer flex items-center justify-between hover:opacity-85 transition-opacity" onclick="togglePhase(this)">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg font-black shrink-0 bg-emerald-500/20 text-emerald-400">٢</div>
+        <div>
+          <h2 class="text-[15px] font-bold mb-0.5">صانع الفلوس — UI/UX</h2>
+          <span class="text-xs opacity-70 block">🕐 شهرين · متوسط</span>
+        </div>
+      </div>
+      <span class="chevron text-lg shrink-0">▾</span>
+    </div>
+    <div class="phase-body hidden px-4 md:px-6 pb-6">
+      <div class="rounded-xl p-4 mb-5 text-[13px] leading-relaxed border border-emerald-500/15 bg-emerald-500/5 mt-4">
+        <strong class="font-bold block mb-1 text-[12px] tracking-wider uppercase opacity-80 text-emerald-300">الهدف</strong>
+        الانتقال من التصميم الثابت (Static) لتصميم المنتجات الرقمية والتطبيقات (Interactive) — هنا الفلوس الحقيقية في السوق.
+      </div>
+      <div class="text-[11px] font-bold tracking-widest uppercase opacity-50 mb-3">الكورسات المطلوبة</div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-emerald-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Figma UI UX Design Essentials</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-emerald-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Figma UI UX Design Advanced</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-emerald-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">User Experience (UX): The Ultimate Guide</strong><span class="text-xs opacity-60">المدرب: David Travis</span></div></div>
+      <div class="mt-4 rounded-xl p-4 text-[12.5px] leading-relaxed border-r-4 border-emerald-500 bg-emerald-500/5">
+        <strong class="font-bold block mb-1">⚡ ركز على إيه؟</strong>
+        في Figma: الـ Auto-layout والـ Components. في Advanced: Design Systems والـ Variables والـ Prototyping.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-emerald-500/5">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase">🎨 المشروع العملي</strong>
+        اختار موقع محلي أو تطبيق "سيء جداً" — اعمله Redesign كامل على Figma من أول الـ Wireframes لحد الـ Prototype التفاعلي.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-red-500/10">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase text-red-400">⚠️ أخطاء المبتدئين</strong>
+        إنهم يعملوا واجهة (UI) شكلها جميل جداً لكن مستحيل تستخدمه. دايماً افتكر: التصميم اللي مابيحلش مشكلة، مش تصميم.
+      </div>
+      <div class="inline-block text-[11px] font-bold px-3 py-1 rounded-full mt-3 bg-emerald-500/15 text-emerald-400">متوسط · Intermediate</div>
+    </div>
+  </div>
+
+  <div class="phase-card border border-white/5 rounded-[20px] overflow-hidden">
+    <div class="bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-4 md:p-5 cursor-pointer flex items-center justify-between hover:opacity-85 transition-opacity" onclick="togglePhase(this)">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg font-black shrink-0 bg-orange-500/20 text-orange-400">٣</div>
+        <div>
+          <h2 class="text-[15px] font-bold mb-0.5">التميز والذكاء الاصطناعي</h2>
+          <span class="text-xs opacity-70 block">🕐 شهر لشهر ونص · متقدم</span>
+        </div>
+      </div>
+      <span class="chevron text-lg shrink-0">▾</span>
+    </div>
+    <div class="phase-body hidden px-4 md:px-6 pb-6">
+      <div class="rounded-xl p-4 mb-5 text-[13px] leading-relaxed border border-orange-500/15 bg-orange-500/5 mt-4">
+        <strong class="font-bold block mb-1 text-[12px] tracking-wider uppercase opacity-80 text-orange-300">الهدف</strong>
+        تتميز عن 90% من المصممين في السوق بالـ Motion وتوظيف الذكاء الاصطناعي عشان تنقل شغلك لليفل تاني.
+      </div>
+      <div class="text-[11px] font-bold tracking-widest uppercase opacity-50 mb-3">الكورسات المطلوبة</div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-orange-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Adobe Photoshop CC – Advanced Training Course</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-orange-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Adobe After Effects CC – Essentials Training</strong><span class="text-xs opacity-60">المدرب: Daniel Walter Scott</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-orange-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Midjourney & AI for Graphic Designers</strong><span class="text-xs opacity-60">ابحث عن أعلى تقييم حديث</span></div></div>
+      <div class="mt-4 rounded-xl p-4 text-[12.5px] leading-relaxed border-r-4 border-orange-500 bg-orange-500/5">
+        <strong class="font-bold block mb-1">⚡ ركز على إيه؟</strong>
+        في Photoshop Advanced: أدوات الـ Generative AI. في After Effects: الـ Keyframing والـ Easing عشان تعمل Micro-interactions.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-orange-500/5">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase">🎨 المشروع العملي</strong>
+        خد لوجو القهوة واعمله Animation مدته 5 ثواني على After Effects. واستخدم الـ AI عشان تعمل صور خلفيات.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-red-500/10">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase text-red-400">⚠️ أخطاء المبتدئين</strong>
+        إنك تخلي الـ AI يعمل كل حاجة وتبقى مجرد "Prompt Engineer" وتفقد مهارتك الإبداعية.
+      </div>
+      <div class="inline-block text-[11px] font-bold px-3 py-1 rounded-full mt-3 bg-orange-500/15 text-orange-400">متقدم · Advanced</div>
+    </div>
+  </div>
+
+  <div class="phase-card border border-white/5 rounded-[20px] overflow-hidden">
+    <div class="bg-gradient-to-br from-fuchsia-500/10 to-fuchsia-500/5 p-4 md:p-5 cursor-pointer flex items-center justify-between hover:opacity-85 transition-opacity" onclick="togglePhase(this)">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-lg font-black shrink-0 bg-fuchsia-500/20 text-fuchsia-400">٤</div>
+        <div>
+          <h2 class="text-[15px] font-bold mb-0.5">الشغل والبورتفوليو</h2>
+          <span class="text-xs opacity-70 block">🕐 شهر · متوسط إلى متقدم</span>
+        </div>
+      </div>
+      <span class="chevron text-lg shrink-0">▾</span>
+    </div>
+    <div class="phase-body hidden px-4 md:px-6 pb-6">
+      <div class="rounded-xl p-4 mb-5 text-[13px] leading-relaxed border border-fuchsia-500/15 bg-fuchsia-500/5 mt-4">
+        <strong class="font-bold block mb-1 text-[12px] tracking-wider uppercase opacity-80 text-fuchsia-300">الهدف</strong>
+        نقفل الدايرة، نبيع الشغل، نجيب فلوس وعملاء — تفهم الجانب البيزنس للمصمم اللي بيشتغل فعلاً.
+      </div>
+      <div class="text-[11px] font-bold tracking-widest uppercase opacity-50 mb-3">الكورسات المطلوبة</div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-fuchsia-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">Graphic Design Masterclass Intermediate</strong><span class="text-xs opacity-60">المدرب: Lindsay Marsh</span></div></div>
+      <div class="bg-white/5 border border-white/5 rounded-xl p-3.5 mb-2.5 flex items-start gap-2.5"><div class="w-2 h-2 rounded-full shrink-0 mt-1.5 bg-fuchsia-500"></div><div><strong class="text-[13px] font-bold block mb-0.5">The Complete Upwork Bootcamp</strong><span class="text-xs opacity-60">أي كورس مشابه عن العمل الحر</span></div></div>
+      <div class="mt-4 rounded-xl p-4 text-[12.5px] leading-relaxed border-r-4 border-fuchsia-500 bg-fuchsia-500/5">
+        <strong class="font-bold block mb-1">⚡ ركز على إيه؟</strong>
+        إزاي تعرض شغلك وتعمل Mockups. وإزاي تكتب Proposal يخلي العميل يرد عليك، وتسعّر شغلك صح.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-fuchsia-500/5">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase">🎨 المشروع العملي</strong>
+        ابني Portfolio على Behance. ارفع أفضل 3 مشاريع كـ Case Study كامل مش مجرد صور مرصوصة.
+      </div>
+      <div class="mt-3 rounded-xl p-4 text-[12.5px] leading-relaxed bg-red-500/10">
+        <strong class="font-bold block mb-1 text-[11px] tracking-wider uppercase text-red-400">⚠️ أخطاء المبتدئين</strong>
+        حشو الـ Portfolio بأي تصاميم. العميل بيحكم عليك بـ "أضعف" عمل في البورتفوليو بتاعك.
+      </div>
+      <div class="inline-block text-[11px] font-bold px-3 py-1 rounded-full mt-3 bg-fuchsia-500/15 text-fuchsia-400">متوسط–متقدم · Intermediate to Advanced</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="final-tip bg-gradient-to-br from-purple-500/15 to-pink-500/10 border border-purple-500/25 rounded-[20px] p-6 mx-4 md:mx-auto max-w-[700px] text-center mb-10 mt-2">
+  <h3 class="text-base font-black mb-2 bg-gradient-to-br from-purple-300 to-pink-400 bg-clip-text text-transparent">نصيحة أخيرة من أخوك الكبير 💜</h3>
+  <p class="text-[13px] text-purple-300/80 leading-relaxed">التصميم عضلة بتضعف لو مامارستش كل يوم. خلصت الكورس؟ أقفل الجهاز، هات ورقة وفكر في فكرة ونفّذها. اللي بيقف مكانه مش بيكمل!</p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // أنيميشن الهيرو (بيشتغل أول ما الصفحة تفتح)
+  const tl = gsap.timeline();
+  tl.from(".badge", { y: -20, opacity: 0, duration: 0.6, ease: "back.out(1.5)" })
+    .from(".hero-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.3")
+    .from(".hero-desc", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5");
+
+  // أنيميشن للكروت وهي بتظهر مع السكرول
+  gsap.utils.toArray('.phase-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        toggleActions: "play none none reverse"
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power2.out"
+    });
+  });
+
+  // أنيميشن النصيحة الأخيرة
+  gsap.from(".final-tip", {
+    scrollTrigger: {
+      trigger: ".final-tip",
+      start: "top 95%"
+    },
+    scale: 0.95,
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.2)"
+  });
+});
+
+// دالة الأكورديون معمولها GSAP عشان تبقى ناعمة
+function togglePhase(head) {
+  const phaseCard = head.closest('.phase-card');
+  const body = phaseCard.querySelector('.phase-body');
+  const chevron = phaseCard.querySelector('.chevron');
+  const isOpen = phaseCard.classList.contains('is-open');
+
+  if (isOpen) {
+    // قفل الكارت
+    gsap.to(body, { 
+      height: 0, 
+      opacity: 0, 
+      duration: 0.4, 
+      ease: "power2.inOut", 
+      onComplete: () => {
+        body.classList.add('hidden');
+        phaseCard.classList.remove('is-open');
+      }
+    });
+    gsap.to(chevron, { rotation: 0, duration: 0.4, ease: "power2.inOut" });
+  } else {
+    // فتح الكارت
+    body.classList.remove('hidden');
+    gsap.fromTo(body, 
+      { height: 0, opacity: 0 }, 
+      { height: "auto", opacity: 1, duration: 0.4, ease: "power2.inOut" }
+    );
+    gsap.to(chevron, { rotation: 180, duration: 0.4, ease: "power2.inOut" });
+    phaseCard.classList.add('is-open');
+  }
+}
+</script>
+</body>
+</html>
